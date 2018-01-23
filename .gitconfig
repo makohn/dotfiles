@@ -1,16 +1,15 @@
 [user]
-	name = makohn
+	name = Marek Kohn
 	email = marek.kohn@gmx.net
-[github]
-	user = makohn
-[core]
-	quotepath = false
-	excludesfile = /Users/mkohn/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	signingkey = 
+
 [commit]
-	template = /Users/mkohn/.stCommitMsg
+	gpgsign = true
+
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[color "diff"]
+	old = red strike
+	new = green italic
+
