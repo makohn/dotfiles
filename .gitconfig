@@ -1,0 +1,59 @@
+[user]
+	name = Marek Kohn
+	email = me@makohn.de
+	username = makohn
+	
+[github]
+	user = makohn
+
+[alias]
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	# Log working tree in short format
+	s = status -s
+
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# Find commits by source code
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+	# List contributors with number of commits
+	contributors = shortlog --summary --numbered
+
+	# List branches that match the given regex
+	which = !git branch | grep -i
+
+	# Show last changes for standup meeting
+	standup = !git log --all --author=$GIT_AUTHOR_NAME --since='9am yesterday' --format=%s
+
+[color]
+	# Use colors in Git commands that are capable of colored output 
+	ui = auto
+
+[core]
+	# Do not quote non-readable characters in file path when using diff
+	quotepath = false
+
+	# Global .gitignore file
+	excludesfile = ~/.gitignore_global
+
+	# Use vim as default editor
+	editor = vim
+
+[commit]
+	# https://help.github.com/articles/signing-commits-using-gpg/
+	gpgsign = true
+
+[push]
+	default = current
+
+[gpg]
+	program = gpg
+
+[merge]
+	tool = opendiff
