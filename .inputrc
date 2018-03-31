@@ -1,0 +1,13 @@
+# Make tab autocomplete regardless of filename case
+set completion-ignore-case on
+
+# List all matches in case multiple completions are possible
+set show-all-if-ambiguous on
+
+# Navigate through history for given command by pressing up/down key
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Also look at the text after the cursor when autocompleting
+set skip-completed-text on
+ 
