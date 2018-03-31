@@ -1,25 +1,40 @@
 # useful aliases
 alias profile='subl ~/.bash_profile'
 alias reload='. ~/.bash_profile'
+
+# navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# shortcuts
 alias finder='open .'
-alias pud='pushd'
+alias pud='pushd .'
 alias pod='popd'
 alias vvim='vim ~/.vimrc'
 alias rmf='rm -rf'
 alias htw='ssh mkohn@stl-s-stud.htwsaar.de'
 
 # network stuff
-alias ip='ifconfig en0 | awk '"'"'$1 == "inet" {print $2}'"'"''
-# alias exip='curl ipecho.net/plain; echo'
-alias exip='dig +short myip.opendns.com @resolver1.opendns.com' # faster than http
+alias ip='ipconfig getifaddr en0'
+alias eip='dig +short myip.opendns.com @resolver1.opendns.com' # faster than http
 alias ping='ping -c 5'
 
 # ls
 alias ll='ls -al'
+alias ld="ls -lF | grep --color=never '^d'"
+
+# grep
+alias grep='grep --color=auto'
+
+# Get week number
+alias week='date +%V'
 
 # can't bother with typos
 alias gti="git" 
 alias claer="clear"
+alias celar="clear"
 
 # useful functions
 function manpdf() { man -t "${1}" | open -f -a /Applications/Preview.app/; }
@@ -47,10 +62,6 @@ function extract() {
      fi
 }
 
-# git 
-alias gg="git log --oneline --all --abbrev-commit --graph --decorate --color"
-alias gis="git status -s"
-
 function rnc() { git commit -m"`curl -s http://whatthecommit.com/index.txt`"; } # random commit message
 function gignore() { curl https://www.gitignore.io/api/$@ > .gitignore; } # gitignore for language
 function ginit() { git init; git add .; git commit -m 'initial commit';} 
@@ -62,3 +73,7 @@ google() { (open "https://www.google.com/search?hl=en&q=$*" )& }
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 # export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]:$(__git_ps1 "(%s)")\$ '
+
+# Avoid issues with `gpg` as installed via Homebrew.
+# https://stackoverflow.com/a/42265848/96656
+export GPG_TTY=$(tty);
