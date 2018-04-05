@@ -2,11 +2,11 @@
 set number
 
 " Set colorscheme to deus
-" set background=dark
+set background=dark
 colorscheme deus
 
 " Load plugin for detected filetype
-" filetype plugin on
+filetype plugin on
 
 " Enable syntax highlighting
 syntax on
