@@ -57,3 +57,7 @@
 
 [merge]
 	tool = opendiff
+
+# URL shorthands
+[url "git@github.com:"]
+	insteadOf = "gh:"
