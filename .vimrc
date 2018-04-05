@@ -1,19 +1,25 @@
-set tabstop=2
+" Enable line numbers
 set number
-execute pathogen#infect()
 
-filetype indent plugin on
+" Set colorscheme to deus
+" set background=dark
+colorscheme deus
 
-" Aesthetics ----------------------------------
+" Load plugin for detected filetype
+" filetype plugin on
+
+" Enable syntax highlighting
 syntax on
+
+" Support 256 color terminals 
 set term=xterm-256color
 set t_Co=256
-set background=dark
+
+" Always show status line
 set laststatus=2
 
-" C Programming ------------------------------
-set cindent
-set cinoptions=g-1
+" Make tabs only two spaces
+set tabstop=2
 
-" Keymappings --------------------------------
+" Keymappings 
 imap jj <ESC>
