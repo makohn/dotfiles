@@ -31,6 +31,9 @@
 	# Show last changes for standup meeting
 	standup = !git log --all --author=$GIT_AUTHOR_NAME --since='9am yesterday' --format=%s
 
+	# Sum up the time spent on this project (from commits with timestamps like 1h30m)
+	time = "!git log --format=%B | awk -F'[@.]' '/\\@/{print $2}' | awk -F'[hm]' '/\\h/{s+=$1}{t+=$2} /^[0-9]+m/{t+=$1} END {s+=int(t/60)} END {t=t%60} END {print s\"h\"t\"m\"}'"
+
 [color]
 	# Use colors in Git commands that are capable of colored output 
 	ui = auto
