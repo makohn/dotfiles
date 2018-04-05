@@ -21,6 +21,10 @@ alias ip='ipconfig getifaddr en0'
 alias eip='dig +short myip.opendns.com @resolver1.opendns.com' # faster than http
 alias ping='ping -c 5'
 
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+    alias "$method"="lwp-request -m \"$method\""
+done
+
 # ls
 alias ll='ls -al'
 alias ld="ls -lF | grep --color=never '^d'"
