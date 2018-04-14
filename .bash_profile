@@ -14,6 +14,7 @@ alias pud='pushd .'
 alias pod='popd'
 alias vvim='vim ~/.vimrc'
 alias rmf='rm -rf'
+alias rsync='rsync -Pru'
 alias htw='ssh mkohn@stl-s-stud.htwsaar.de'
 
 # network stuff
