@@ -22,6 +22,7 @@ binaries=(
 	python 
 	node
 	gnupg
+	wget
 )
 
 echo "Installing binaries..."
