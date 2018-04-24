@@ -64,3 +64,6 @@
 # URL shorthands
 [url "git@github.com:"]
 	insteadOf = "gh:"
+
+[url "git@bitbucket.org:"]
+	insteadOf = "bb:"
