@@ -42,3 +42,12 @@ apps=(
 
 brew cask install ${apps[@]}
 
+###############################################################################
+# Softlinks			                                                          #
+###############################################################################
+
+# code -> Visual Studio Code
+ln -s "/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron" /usr/local/bin/code
+
+# subl -> Sublime Text
+ln -s "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
