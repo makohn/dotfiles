@@ -78,7 +78,13 @@ google() { (open "https://www.google.com/search?hl=en&q=$*" )& }
 # prompt
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-# export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]:$(__git_ps1 "(%s)")\$ '
+
+LIGHTBLUE="\[\033[38;5;081m\]"
+DEEPBLUE="\[\033[38;5;025m\]"
+NEONGREEN="\[\033[38;5;154m\]"
+WHITE="\[\033[00m\]"
+
+export PS1="$LIGHTBLUE\u$WHITE@$DEEPBLUE\h$WHITE: $NEONGREEN\w\n$WHITE> "
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
