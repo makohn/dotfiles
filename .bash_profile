@@ -77,14 +77,17 @@ google() { (open "https://www.google.com/search?hl=en&q=$*" )& }
 
 # prompt
 export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+export LSCOLORS=fxcxcxdxbxegedabagacad
 
-LIGHTBLUE="\[\033[38;5;081m\]"
-DEEPBLUE="\[\033[38;5;025m\]"
-NEONGREEN="\[\033[38;5;154m\]"
-WHITE="\[\033[00m\]"
+reset="\[$(tput sgr0)\]"; # reset colors
+bold="\[$(tput bold)\]";
+lightblue="\[$(tput setaf 87)\]";
+blue="\[$(tput setaf 33)\]";
+neongreen="\[$(tput setaf 112)\]";
+white="\[$(tput setaf 15)\]";
+arrow="➥"
 
-export PS1="$LIGHTBLUE\u$WHITE@$DEEPBLUE\h$WHITE: $NEONGREEN\w\n$WHITE> "
+export PS1="$lightblue\u$reset@$blue\h$white: $neongreen\w\r\n$bold$white$arrow$reset "
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
