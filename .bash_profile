@@ -70,7 +70,7 @@ function extract() {
 function rnc() { git commit -m"`curl -s http://whatthecommit.com/index.txt`"; } # random commit message
 function gignore() { curl https://www.gitignore.io/api/$@ > .gitignore; } # gitignore for language
 function ginit() { git init; git add .; git commit -m 'initial commit';} 
-function rng() { echo $RANDOM % $1 + 1 | bc; } # Random number generator
+function rng() { echo $RANDOM % ${1:-100} + 1 | bc; } # Random number generator
 
 # tools
 google() { (open "https://www.google.com/search?hl=en&q=$*" )& } 
