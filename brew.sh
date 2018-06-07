@@ -23,6 +23,7 @@ binaries=(
 	node
 	gnupg
 	wget
+	graphviz
 )
 
 echo "Installing binaries..."
