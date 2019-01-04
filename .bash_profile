@@ -32,6 +32,7 @@ alias ld="ls -lF | grep --color=never '^d'"
 
 # grep
 alias grep='grep --color=auto'
+alias hgrep='history | grep -i'
 
 # Get week number
 alias week='date +%V'
