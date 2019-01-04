@@ -41,6 +41,9 @@ alias gti="git"
 alias claer="clear"
 alias celar="clear"
 
+# monitor resources
+alias free="top -l 1 -s 0 | grep PhysMem"
+
 # useful functions
 function manpdf() { man -t "${1}" | open -f -a /Applications/Preview.app/; }
 function mcd() { mkdir -p "$1" && cd "$1"; }
