@@ -34,6 +34,9 @@
 	# Sum up the time spent on this project (from commits with timestamps like 1h30m)
 	time = "!git log --format=%B | awk -F'[@.]' '/\\@/{print $2}' | awk -F'[hm]' '/\\h/{s+=$1}{t+=$2} /^[0-9]+m/{t+=$1} END {s+=int(t/60)} END {t=t%60} END {print s\"h\"t\"m\"}'"
 
+	# Get all remote repositories (Github) from the specified user
+	repos = "!f() { curl -s \"https://api.github.com/users/$1/repos?per_page=100&page=1\" | jq -r '.[] | .name'; }; f"
+
 [color]
 	# Use colors in Git commands that are capable of colored output 
 	ui = auto
