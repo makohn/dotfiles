@@ -76,6 +76,11 @@ function gignore() { curl https://www.gitignore.io/api/$@ > .gitignore; } # giti
 function ginit() { git init; git add .; git commit -m 'initial commit';} 
 function rng() { echo $RANDOM % ${1:-100} + 1 | bc; } # Random number generator
 
+# Experimental -> Test on macOS
+function sublf() {
+    find . -name $1 | xargs subl
+}
+
 # tools
 google() { (open "https://www.google.com/search?hl=en&q=$*" )& } 
 
