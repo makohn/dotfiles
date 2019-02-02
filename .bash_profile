@@ -76,9 +76,9 @@ function gignore() { curl https://www.gitignore.io/api/$@ > .gitignore; } # giti
 function ginit() { git init; git add .; git commit -m 'initial commit';} 
 function rng() { echo $RANDOM % ${1:-100} + 1 | bc; } # Random number generator
 
-# Experimental -> Test on macOS
+# Open found files with sublime
 function sublf() {
-    find . -name $1 | xargs subl
+    find . -name "$1" | xargs subl
 }
 
 # tools
