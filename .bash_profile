@@ -81,6 +81,11 @@ function sublf() {
     find . -name "$1" | xargs subl
 }
 
+# Move files that match regex
+function mvf() {
+		find . -wholename "$1" -print0 | xargs -0 -I {} mv {} $2
+}
+
 # tools
 google() { (open "https://www.google.com/search?hl=en&q=$*" )& } 
 
