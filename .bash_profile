@@ -83,7 +83,7 @@ function sublf() {
 
 # Move files that match regex
 function mvf() {
-		find . -wholename "$1" -print0 | xargs -0 -I {} mv {} $2
+	find . -wholename "$1" -print0 | xargs -0 -I {} mv {} $2
 }
 
 # tools
