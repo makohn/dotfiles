@@ -1,25 +1,43 @@
-" Enable line numbers
-set number
-
-" Set colorscheme to deus
-set background=dark
-colorscheme deus
-
-" Load plugin for detected filetype
-filetype plugin on
-
-" Enable syntax highlighting
 syntax on
 
-" Support 256 color terminals 
-set term=xterm-256color
-set t_Co=256
-
-" Always show status line
-set laststatus=2
-
-" Make tabs only two spaces
+" Spaces instead of tabs
+filetype plugin indent on
 set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
-" Keymappings 
-imap jj <ESC>
+" Line numbers
+set number
+set ruler
+
+" Relative line numbers
+set rnu
+
+" Colors
+set background=dark
+set t_Co=256
+colorscheme enfocado 
+
+" Show whitespace
+set lcs=tab:——,space:·
+set binary
+set list
+
+" Highlight current line number
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+set cursorline
+
+" Highlight search results
+set hlsearch
+
+let g:python_highlight_all = 1
+"highlight Comment ctermfg=green
+
+" Use ctrl-[hjkl] to select the active split
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+autocmd FileType c setlocal expandtab shiftwidth=2 tabstop=2
